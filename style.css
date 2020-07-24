@@ -1,0 +1,347 @@
+/* Afin de valider ton code CSS, clic sur la petite flèche en haut à droite de cette fenêtre. Pour rappel, tu peux jeter un oeil par ici pour en savoir un peu plus: https://blog.codepen.io/2017/10/11/analyze-css-now-using-stylelint/ */
+
+/* Ecris ici ton code CSS */
+
+/* IMPORTATION DES POLICES */
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+/* MISE EN FORME GENERALE */
+
+* {
+  box-sizing:border-box;
+  padding: 0;
+}
+
+.container {
+  background-color: #fafafa;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+hr {
+  margin: 50px auto 30px auto;
+}
+
+body {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" width="56" height="28"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z"%3E%3C/path%3E%3C/svg%3E');
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  text-align: center;
+}
+
+.circus {
+  font-family: "Amatic SC", cursive;
+  color: #ff6d00;
+  font-weight: normal;
+}
+
+/* HEADER */
+
+header h1 {
+  font-size: 95px;
+  color: #444;
+  margin: 0 auto;
+}
+
+nav ul li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #607d8b;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  font-size: 21px;
+  color: #FF9100;
+}
+
+nav ul,
+#performances ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+nav ul li,
+#performances ul li {
+  margin: 10px;
+}
+
+/* SLIDER */
+
+.slider {
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto; 
+}
+
+.slide-image{
+  display: none; /* Images cachées par défaut*/
+  animation: fade 1s;
+  -webkit-animation: fade 1s;
+}
+
+.slide-image img{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: solid 5px #444;
+  border-radius: 5px;
+}
+
+#prev,
+#next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 20px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 20px;
+  transition: 0.8s;
+}
+
+#next {
+  right: 0;
+}
+
+#prev:hover,
+#next:hover {
+  background-color: #444;
+  opacity: 0.6;
+}
+
+.image-number {
+  color: #f2f2f2;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dots-container{
+  text-align: center;
+  padding: 10px;
+}
+
+.dots {
+  display: inline-block;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-right: 3px;
+  background-color: #9E9E9E;
+  transition: background-color 0.8s;
+}
+
+.active,
+.dots:hover {
+  background-color: #ff6d00;
+}
+
+/* Animations */
+@keyframes fade {
+  from {opacity: 0.6}
+  to {opacity: 1}
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0.6}
+  to {opacity: 1}
+}
+
+/* SECTION PERFORMANCES */
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.layer {
+  background: rgba(255, 255, 255, 0.75);
+  height: 100%;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#performances h3 {
+  font-size: 17px;
+  color: #444;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff6d00;
+  padding-bottom: 10px;
+  margin: 10px;
+}
+
+#performances p {
+  font-size: 13px;
+  color: #424242;
+  padding-top: 0;
+}
+
+#performances li {
+  width: 350px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+#performances li:nth-child(1) {
+  background: url("https://i.postimg.cc/CxkCDx7G/clown.png")
+    no-repeat center;
+}
+
+#performances li:nth-child(2) {
+  background: url("https://i.postimg.cc/YSNJXkrg/magie.png")no-repeat
+    center;
+}
+
+#performances li:nth-child(3) {
+  background: url("https://images.unsplash.com/photo-1486667970798-b29d1090ff95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")no-repeat
+    center;
+}
+
+/* SECTION ABOUT US */
+
+#aboutUs {
+  text-align: center;
+}
+
+.social-media{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    opacity: 1;
+    -webkit-transition: .8s;
+    transition: .8s;
+}
+.social-media:hover{
+    filter: grayscale(100%);
+    opacity: 0.6;
+    box-shadow: 0px 18px 22px -15px;
+}
+
+/* SECTION PRICES */
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th,
+td {
+  border: solid 1px black;
+  padding: 10px;
+  width: 160px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #ff3d00;
+  color: #fafafa;
+}
+
+thead th:nth-child(1) {
+  border-top: 0;
+  border-left: 0;
+  background-color: #fafafa;
+}
+
+tbody th {
+  background-color: #444;
+  color: #fafafa;
+}
+
+/* SECTION CONTACT */
+
+#contact {
+  text-align: center;
+}
+
+#mail {
+  width: 365px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #444;
+  color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+footer p {
+  margin-left: 5px;
+}
+
+footer a {
+  color: #fafafa;
+  font-style: italic;
+}
+
+footer p a:last-child {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@media all and (max-width: 1150px) {
+  .container {
+    width: auto;
+  }
+
+  #performances ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media all and (max-width: 850px) {
+ 
+  iframe {
+    width: auto;
+    height: 170px;
+  }
+
+  th,
+  td {
+    width: 80px;
+    font-size: 10px;
+  }
+
+  #mail {
+    width: auto;
+  }
+
+  #message {
+    width: 300px;
+  }
+
+  footer {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    height: auto;
+    padding: 10px;
+    margin: auto;
+  }
+
+  footer h1,
+  footer p {
+    margin: auto;
+  }
+}
